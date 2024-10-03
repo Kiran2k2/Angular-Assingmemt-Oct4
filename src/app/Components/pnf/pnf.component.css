@@ -1,0 +1,8 @@
+/* .containerr{
+    display: flex;justify-content: center;
+    align-items: center;
+} */
+.pnf-box{
+    display: flex;
+    justify-content: center;align-items: center;
+}

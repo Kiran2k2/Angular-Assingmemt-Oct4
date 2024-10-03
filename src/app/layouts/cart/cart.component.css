@@ -1,0 +1,135 @@
+.card {
+    height: 60vh;
+    margin: 25px;
+    padding: 25px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+}
+
+
+.center img {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    height: 162px;
+    width: 250px;
+    margin: 20px 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.center img:hover {
+    transform: scale(1.05);
+}
+
+h4,
+h6 {
+    font-weight: 400;
+    color: #333;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.card-table {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: .25rem;
+}
+
+/* Button Styling */
+.center .btn {
+    font-size: 14px !important;
+    margin-top: 20px !important;
+    font-weight: 400;
+    padding: 12px 72px;
+    border-radius: 3px !important;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.center .btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #eb2121de;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-danger:hover {
+    background-color: #b71c1c;
+}
+
+
+@media (max-width: 1024px) {
+    .center img {
+        width: 200px;
+        height: 130px;
+    }
+
+    .center .btn {
+        padding: 10px 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .center img {
+        width: 180px;
+        height: 120px;
+    }
+
+    .center .btn {
+        padding: 8px 40px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .center img {
+        width: 150px;
+        height: 100px;
+    }
+
+    .center .btn {
+        padding: 8px 35px;
+        font-size: 12px;
+    }
+
+    h4,
+    h6 {
+        font-size: 1rem;
+    }
+}

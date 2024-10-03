@@ -1,0 +1,91 @@
+
+          <div class="container" *ngIf="product ">
+            <div class="card">
+              <div class="container-fliud">
+                <div class="wrapper row">
+                  <button  type="button" class="btn btn-danger wid" (click)="deletePro()">Delete</button>
+
+                  <div class="preview col-md-6">
+                    
+                    <div class="preview-pic tab-content">
+                      <div class="tab-pane active" id="pic-1"><img src="{{product.thumbnail}}" /></div>
+                     
+                     
+                    </div>
+                    <ul class="preview-thumbnail nav nav-tabs">
+                      
+                      <li><a data-target="#pic-2" data-toggle="tab"><img src="{{product.images[1]}}" /></a></li>
+                      <li><a data-target="#pic-3" data-toggle="tab"><img src="{{product.images[2]}}" /></a></li>
+                      <li><a data-target="#pic-4" data-toggle="tab"><img src="{{product.images[3]}}" /></a></li>
+                      
+                    </ul>
+                    
+                  </div>
+                  <div class="details col-md-6" >
+                    <h3 class="product-title">{{product.title}}</h3>
+                    <div *ngIf="isEditing">
+
+                      <input type="text" placeholder=  "edit Title"  [(ngModel)]="updateTitle" name="updateTitle">
+                    
+                     
+
+                    </div>
+                    <button class="btn-edit" (click)="toggle()">{{isEditing?'Cancle':'Edit'}}</button>
+
+                    
+                    <div class="rating">
+                      <div class="stars">
+                        {{product.rating}}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                      </div>
+                      <p class="review-no">{{product.review}}</p>
+                    
+                    </div>
+                   
+                    <p class="product-description">{{product.description}}</p>
+                    <input type="text" placeholder=  "edit Description"  *ngIf="isEditing" [(ngModel)]="updateDescription" name="updateDescription">
+
+                    <h4 class="price">current price: <span>{{product.price | currency:"INR"}}</span></h4>
+                    <input type="text" placeholder=  "edit Price" *ngIf="isEditing" [(ngModel)]="updatePrice" name="updatePrice">
+
+                    <p class="vote"><strong>{{product.review}}</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+     
+                  
+                  
+                    <div class="action">
+                      <button class="btn btn-success mb-2" *ngIf="isEditing" (click)="updatedProd()"> Update Product</button>
+
+                      <button class="add-to-cart btn btn-default" type="button"  (click)="addToCart()">add to cart</button>
+                    
+                    </div>
+                  </div>
+                </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

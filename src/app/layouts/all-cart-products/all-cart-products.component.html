@@ -1,0 +1,93 @@
+
+<div class="container" *ngIf="cartProduct.length > 0"> 
+      <h2 class="heading">Shopping Carts Overview</h2>
+
+  <div *ngFor="let cart of cartProduct; let cartIndex = index" class="cart">
+    <div class="cart-header">
+      <h3>Cart ID: {{ cart.id }}</h3>
+      <p>User ID: {{ cart.userId }}</p>
+      <a [routerLink]="['/allCartList', cart.id]" class="view">View Details</a>
+
+      <button class=" delete-btn" (click)="onDeleteCart(cart.id)">Delete</button>
+
+      <button (click)="toggleAddProductForm()" class="add-btn">
+
+        {{ showAddForm ? 'Close Add Product Form' : 'Add Product to Cart' }}
+
+      </button>
+
+      
+
+    </div>
+
+    <div class="cart-details">
+      <p><strong>Total Products:</strong> {{ cart.totalProducts }}</p>
+      <p><strong>Total Quantity:</strong> {{ cart.totalQuantity }}</p>
+      <p><strong>Total:</strong> {{ cart.total | currency: 'INR' }}</p>
+      <p><strong>Discounted Total:</strong> {{ cart.discountedTotal | currency: 'INR' }}</p>
+    </div>
+
+    <h4 class="product-heading">Products</h4>
+    <div class="product-list">
+      <div *ngFor="let product of cart.products; let productIndex = index" class="product">
+        <img [src]="product.thumbnail" alt="{{ product.title }}" class="product-image" />
+        <div class="product-info">
+          <p class="product-title">{{ product.title }}</p>
+
+
+          <p class="product-price">Price: {{ product.price | currency: 'INR' }}</p>
+
+
+          <p>Quantity: {{ product.quantity }}</p>
+          <p>Total: {{ product.total | currency: 'INR' }}</p>
+
+
+
+          
+          
+<div *ngIf="showAddForm" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="toggleAddProductForm()">&times;</span>
+    <h3>Add Products to Cart</h3>
+
+    <div *ngFor="let p of cart.products; let i = index" class="form-group">
+      <label >Product ID:</label>
+      <input [(ngModel)]="p.id" class="form-control" placeholder="Enter Product ID" />
+      <label >Quantity:</label>
+      <input [(ngModel)]="p.quantity" type="number" class="form-control" placeholder="Enter Quantity" />
+    </div>
+
+    <button (click)="onAddProductCart()" class="btn btn-success mt-3">Add Products</button>
+  
+  </div>
+  <div class="overlay" (click)="toggleAddProductForm()"></div> 
+</div>
+
+          <div class="form-group">
+            <label for="productId-{{ cartIndex }}-{{ productIndex }}">Update Product ID:</label>
+            <input [(ngModel)]="product.id" type="number" class="form-control" placeholder="Enter Product ID" />
+          </div>
+
+          <div class="form-group">
+            <label >Update Quantity:</label>
+            <input [(ngModel)]="product.quantity"  type="number" class="form-control" placeholder="Enter Quantity" />
+          </div>
+
+          <button (click)="onUpdateData(cart.id, product.id, product.quantity)" class="update-btn">
+            Update Product
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div *ngIf="cartProduct.length === 0">
+  <p class="no-data">No carts available.</p>
+</div> 
+
+
+
+

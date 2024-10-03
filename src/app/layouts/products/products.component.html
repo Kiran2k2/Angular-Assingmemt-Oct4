@@ -1,0 +1,89 @@
+
+ <app-header></app-header>
+ <app-home></app-home>
+ <app-catagories></app-catagories>
+
+ <div class="heading-part">
+  <h3><span style="color: rgb(253, 140, 159);"> Our</span> Products</h3>
+</div>
+
+<button class="btn btn-primary" style="margin-left: 240px;" (click)="openShowAddForm()">Add New Product</button>
+
+<div class="container">
+  <div *ngFor="let product of productList" class="product-container">
+    <div class="card">
+      <button style="width: 100px;" class="btn btn-danger" (click)="onDeleteProduct(product.id)">Delete</button>
+
+      <div class="imgBx">
+        <img loading="lazy" [src]="product.thumbnail" alt="Product Image" />
+      </div>
+      <div class="content">
+        <div class="productName">{{ product.title }}</div>
+        <div class="price-rating">
+          <h2>{{ product.price | currency: 'INR' }}</h2>
+          <div class="rating">
+            {{ product.rating }}
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+          <button class="viewButton" [routerLink]="['/product', product.id]">
+            <span style="font-size: 16px;">View</span>
+          </button>
+          <button class="addTo" (click)="addToCart(product)">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span>Add to cart</span>
+          </button>
+          <button class="btn btn-info" (click)="openUpdateForm(product)">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div *ngIf="productList.length > getMoreProduct.length">
+  <button (click)="getMoreProduct()" class="btn btn-success m-l-200px">View More</button>
+</div>
+
+
+
+<div *ngIf="showAddForm" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeShowForm()">&times;</span>
+    <h3>{{ isUpdateMode ? 'Update Product' : 'Add New Product' }}</h3>
+
+    <form (ngSubmit)="isUpdateMode ? updateProduct() : addNewProduct()">
+      <div class="form-group" *ngIf="!isUpdateMode">
+        <label for="title">Product Title:</label>
+        <input type="text" id="title" [(ngModel)]="newAddProduct.title" name="title" class="form-control" required />
+      </div>
+
+      <div *ngIf="isUpdateMode" class="form-group">
+        <label for="updateTitle">Update Product Title:</label>
+        <input type="text" id="updateTitle" [(ngModel)]="newAddProduct.title" name="newAddProduct.title" class="form-control" placeholder="Update product title" required />
+      </div>
+
+
+
+
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="newAddProduct.description" name="description" class="form-control" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" [(ngModel)]="newAddProduct.price" name="price" class="form-control" required />
+        
+      </div>
+
+      <button type="submit" class="btn btn-success">{{ isUpdateMode ? 'Update Product' : 'Add Product' }}</button>
+    </form>
+  </div>
+  <div class="overlay" (click)="closeShowForm()"></div>
+</div>
+<app-footer></app-footer>

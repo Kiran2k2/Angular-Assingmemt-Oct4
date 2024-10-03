@@ -1,0 +1,20 @@
+
+ <div *ngIf="cart" class="top-header">
+    <h3>Cart ID: {{cart.id}}</h3>
+    <h3>User ID: {{cart.userId}}</h3>
+  </div>
+  
+  <div class="product-card-container">
+    <div *ngFor="let p of cart.products" class="product-card">
+      
+      <img src="{{p.thumbnail}}" alt="{{p.title}}" class="product-image">
+  
+      <div class="product-details">
+        <h3>{{p.title}}</h3>
+        <h4>{{p.price | currency}}</h4>
+        <p>{{p.discountedTotal}}</p>
+        <p>Rating: {{p.discountPercentage}} ⭐⭐⭐</p>
+      </div>
+    </div>
+  </div>
+  

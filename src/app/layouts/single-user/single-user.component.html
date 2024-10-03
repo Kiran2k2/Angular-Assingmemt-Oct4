@@ -1,0 +1,31 @@
+
+  <div  class="top-header">
+    <h3>User-Data</h3>
+    
+  </div>
+  
+  <div class="product-card-container"*ngIf="userData" >
+    <div  class="product-card">
+      
+      <img src="{{userData.image}}" alt="{{userData.title}}" class="product-image">
+  
+      <div class="product-details">
+        <h3> <strong>User-Name:</strong>{{userData.firstName}}</h3>
+        <h4><strong> Email:{{userData.email}}</strong></h4>
+        <!-- <p>Rating: {{p.discountPercentage}} ⭐⭐⭐</p> -->
+        <div class="col-sm-6">
+            <p class="m-b-10 f-w-600">Phone</p>
+            <h6 class="text-muted f-w-400">{{userData.phone}}</h6>
+            <h6 class="text-muted f-w-400"> Password:{{userData.password}}</h6>
+            <h6 class="text-muted f-w-400"> Gender:{{userData.gender}}</h6>
+            <h6 class="text-muted f-w-400"> Age:{{userData.age}}</h6>
+
+
+
+        </div>
+        </div>
+        
+    </div>
+  </div>
+  
+  

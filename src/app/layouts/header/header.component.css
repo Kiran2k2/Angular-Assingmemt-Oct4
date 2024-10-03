@@ -1,0 +1,109 @@
+
+a{
+    cursor: pointer;
+}
+
+.main-navbar{
+    border-bottom: 1px solid #ccc;
+}
+.main-navbar .top-navbar{
+    padding-bottom: 10px;
+    background-color: rgba(14, 13, 14, 0.863);
+   
+    outline: 0;
+    gap: 60px;
+    
+}
+.row{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content:space-between;
+}
+
+
+img{
+    background-color: rgba(231, 225, 225, 0.938);
+    height: 60px;
+    width: 150px;
+    color: white;
+}
+.all-cart-list{
+    color: rgb(248, 244, 244);
+    /* border:2px solid rgb(129, 126, 126); */
+    margin-right: 80px;
+    background-color: rgb(173, 129, 170);
+    text-decoration: none;
+    height: 40px;
+    width: 110px;
+    border-radius: 10px;
+    padding: 6px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.main-navbar .top-navbar .brand-name{
+    color: #fff;
+}
+.main-navbar .top-navbar .nav-link{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+.input-group {
+    width: 380px;
+    
+   
+}
+.input-group input, .input-group button{
+    height: 30px;
+}
+.input-group input{
+    background-color: aliceblue;
+    border: 0;
+    
+}
+.main-navbar .top-navbar .dropdown-menu{
+    padding: 0px 0px;
+    border-radius: 0px;
+}
+.main-navbar .top-navbar .dropdown-menu .dropdown-item{
+    padding: 8px 16px;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+}
+.main-navbar .top-navbar .dropdown-menu .dropdown-item i{
+    width: 20px;
+    text-align: center;
+    /* color: #f8f8f8; */
+    font-size: 14px;
+}
+
+
+.logoutBTn{
+    background:wheat;
+    /* color: white; */
+    border: 0;
+    color: rgb(19, 11, 11);
+    
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+
+.header-img {
+    height: 20px;
+    
+
+}
+
+@media only screen and (max-width: 600px) {
+    .main-navbar .top-navbar .nav-link{
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+
+
+         

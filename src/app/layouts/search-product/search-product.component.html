@@ -1,0 +1,19 @@
+
+
+<div>
+    <h2>Search Results for "{{ query }}"</h2>
+  
+    <div *ngIf="products.length; else noResults">
+      <ul>
+        <li *ngFor="let product of products">
+          {{ product.title }} - ${{ product.price }}
+          <div><img src="{{product.images[0]}}" alt=""></div>
+        </li>
+      </ul>
+    </div>
+  
+    <ng-template #noResults>
+      <p>No products found for "{{ query }}".</p>
+    </ng-template>
+  </div>
+  

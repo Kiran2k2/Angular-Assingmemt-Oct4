@@ -1,0 +1,58 @@
+<div class="text-center my-3">
+    <button class="btn btn-primary" (click)="openAddProductModal()">Add New Product</button>
+</div>
+<ag-grid-angular
+  class="ag-theme-alpine custom-grid"
+  style="height: 500px; width: 100%;"
+  [rowData]="productList"
+  [pagination]="true"
+  [paginationPageSize]="10"
+  [columnDefs]="colDefs"
+  (gridReady)="OnGridReady($event)"
+  [defaultColDef]="defaultColDef"
+>
+</ag-grid-angular>
+  
+
+<!-- <div class="row mt-4">
+    <div class="col-md-6">
+      <form #productForm="ngForm" (ngSubmit)="addProduct(productForm)">
+        <div class="form-group">
+          <label for="title">Product Title:</label>
+          <input type="text" [(ngModel)]="newProduct.title" class="form-control" id="title" name="title" required />
+        </div>
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input type="number" [(ngModel)]="newProduct.price" class="form-control" id="price" name="price" required />
+        </div>
+        <div class="form-group">
+          <label for="thumbnail">Thumbnail URL:</label>
+          <input type="text" [(ngModel)]="newProduct.thumbnail" class="form-control" id="thumbnail" name="thumbnail" />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Product</button>
+      </form>
+    </div>
+  </div> -->
+
+
+
+  <div *ngIf="isModalVisible" class="modal-overlay">
+    <div class="modal-content">
+      <h3>{{ isEditMode ? 'Edit Product' : 'Add New Product' }}</h3>
+      <form (ngSubmit)="isEditMode ? updateProduct() : addNewProduct()">
+        <div class="form-group">
+          <label for="title">{{ isEditMode ? 'Edit' : 'Add' }} Product Title:</label>
+          <input type="text" [(ngModel)]="selectedProduct.title" class="form-control" id="title" name="title" required />
+        </div>
+        <div class="form-group">
+          <label for="price">{{ isEditMode ? 'Edit' : 'Add' }} Price:</label>
+          <input type="number" [(ngModel)]="selectedProduct.price" class="form-control" id="price" name="price" required />
+        </div>
+        <div class="form-group" *ngIf="!isEditMode">
+          <label for="thumbnail">Thumbnail URL:</label>
+          <input type="text" [(ngModel)]="selectedProduct.thumbnail" class="form-control" id="thumbnail" name="thumbnail" />
+        </div>
+        <button type="submit" class="btn btn-success">{{ isEditMode ? 'Update Product' : 'Add Product' }}</button>
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+      </form>
+    </div>

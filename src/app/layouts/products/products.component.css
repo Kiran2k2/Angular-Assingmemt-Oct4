@@ -1,0 +1,242 @@
+.container {
+    position: relative;
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 50px;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.container .card {
+    width: 100%;
+    background: #fff;
+}
+
+.heading-part {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.heading-part:after {
+    position: absolute;
+    content: '';
+    left: 0px;
+    right: 0px;
+    bottom: -390px;
+    width: 50px;
+    height: 2px;
+    background-color: #f087bb;
+    margin: 0 auto;
+}
+
+.container .card .imgBx {
+    position: relative;
+    height: 310px;
+    overflow: hidden;
+}
+
+.container .card .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300px;
+}
+
+.container .card .content {
+    padding: 10px;
+}
+
+.container .card .content .productName h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin: 5px 0;
+}
+
+.container .card .content .price-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .card .content .price-rating h2 {
+    font-size: 20px;
+    color: #ff2020;
+    font-weight: 500;
+}
+
+.container .card .content .price-rating .fa {
+    color: #e6ce67;
+    cursor: pointer;
+}
+
+.container .card .content .price-rating .fa.grey {
+    color: #ccc;
+}
+
+.container .card:hover .action li {
+    transform: translateX(0px);
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); }
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.content .viewButton {
+    width: 100px;
+    height: 40px;
+    margin-left: -1px;
+    margin-bottom: 2px;
+    background-color: rgba(117, 117, 185, 0.856);
+    border-radius: 6px;
+    border: 0;
+    outline: 0;
+    color: rgb(255, 255, 255);
+}
+
+.content .viewButton:hover {
+    background-color: rgba(54, 54, 221, 0.856);
+}
+
+.addTo {
+    width: 100px;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    background-color: rgba(245, 245, 220, 0.842);
+    color: rgb(43, 41, 41);
+    font-size: 13px;
+    border-radius: 6px;
+}
+
+.addTo:hover {
+    background-color: #bda624;
+}
+
+
+@media (max-width: 992px) {
+    .container {
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 30px;
+        padding: 15px;
+    }
+
+    .container .card .imgBx {
+        height: 250px;
+    }
+
+    .container .card .imgBx img {
+        height: 240px;
+    }
+    
+    .container .card .content .productName h3 {
+        font-size: 16px;
+    }
+
+    .container .card .content .price-rating h2 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-gap: 20px;
+        padding: 10px;
+    }
+
+    .container .card .imgBx {
+        height: 200px;
+    }
+
+    .container .card .imgBx img {
+        height: 190px;
+    }
+
+    .container .card .content .productName h3 {
+        font-size: 14px;
+    }
+
+    .container .card .content .price-rating h2 {
+        font-size: 16px;
+    }
+
+    .modal-content {
+        width: 90%; /
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        grid-template-columns: 1fr; 
+    }
+
+    .container .card .imgBx {
+        height: 150px;
+    }
+
+    .container .card .imgBx img {
+        height: 140px;
+    }
+
+    .container .card .content .productName h3 {
+        font-size: 12px;
+    }
+
+    .container .card .content .price-rating h2 {
+        font-size: 14px;
+    }
+}

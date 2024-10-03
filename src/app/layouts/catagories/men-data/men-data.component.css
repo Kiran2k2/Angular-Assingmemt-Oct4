@@ -1,0 +1,75 @@
+.body{
+    /* border: 2px solid red; */
+    display: flex;
+    /* height: 700px; */
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;align-items: center;
+    margin: 30px auto;
+    width: 80%;
+    /* margin-left: 60px; */
+ 
+}
+h3{
+    font-size: 1rem;
+    padding-bottom: 30px;
+    padding-left: 10px;
+}
+.card{
+    display: flex;
+    /* border: 2px solid green; */
+    height: 400px;
+   
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    /* height: 500px; */
+    /* overflow: hidden; */
+    width: 300px;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+ .body .card .imageBox{
+    /* border: 2px solid green; */
+    height: 200px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    /* overflow: hidden; */
+  
+}
+
+
+img{
+    height: 100%;
+    width: 80%;
+    /* padding-left: 60px;   */
+}
+.details .min-details{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: #934478a8;
+    border-radius: 5px;
+    color: #FFF;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    margin-left: 60px;
+    width: 50%;
+    transition: 
+                transform .3s ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: 0 5px 10px rgba(211, 205, 205, 0.3);
+  transform: translateY(-2px);
+} 
+
+
+

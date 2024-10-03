@@ -1,0 +1,118 @@
+.card-top {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .card-top .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  }
+  
+  .item {
+    height: 240px;
+    border: 1px solid rgb(185, 184, 184);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .header-tag {
+    text-align: center;
+  }
+  
+  .item h6 {
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  img {
+    width: 270px;
+    height: 200px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  img:hover {
+    transform: scale(0.9);
+  }
+  
+  /* Responsive Design */
+  
+  /* For Tablets and Medium-sized devices */
+  @media (max-width: 1024px) {
+    .card-top {
+      height: auto; /* Allow card-top height to adjust */
+      gap: 20px;
+    }
+  
+    .item {
+      width: 240px; /* Smaller cards on medium screens */
+      height: auto;
+    }
+  
+    img {
+      width: 220px;
+      height: 180px;
+    }
+  }
+  
+  /* For Small devices (phones) */
+  @media (max-width: 768px) {
+    .card-top {
+      flex-direction: column; /* Stack cards vertically */
+      height: auto;
+      gap: 10px;
+    }
+  
+    .item {
+      width: 90%; /* Full-width on smaller screens */
+      margin: 0 auto;
+    }
+  
+    img {
+      width: 100%; /* Image adapts to the width */
+      height: auto; /* Maintain aspect ratio */
+    }
+  
+    h6 {
+      font-size: 18px; /* Slightly smaller font on mobile */
+    }
+  }
+  
+  /* For Extra-small devices (phones) */
+  @media (max-width: 576px) {
+    .item {
+      width: 100%;
+      height: auto;
+    }
+  
+    img {
+      width: 100%;
+      height: auto;
+    }
+  
+    h6 {
+      font-size: 16px;
+    }
+  
+    .card-top {
+      gap: 5px;
+    }
+  }
+  
